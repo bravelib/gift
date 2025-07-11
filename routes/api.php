@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\Gift\Http\Controllers\GiftController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// 🎁 Gift sending API route
+Route::post('/gift/group-give', [GiftController::class, 'giveGroupGift']);
+
+// Route::middleware('auth:sanctum')->post('/gift/group-give', [GiftController::class, 'giveGroupGift']);
+
